@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Journal</title>
+</head>
+<body>
+    <h1>📝 Your Daily Journal</h1>
+
+    <form method="POST" action="/matcher">
+        <textarea name="entry" rows="10" cols="70" placeholder="Write your journal entry here..."></textarea><br><br>
+        <button type="submit">Reflect</button>
+    </form>
+
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% endif %}
+
+    {% if daily_prompt %}
+        <h3>🧠 Reflective Prompt</h3>
+        <p>{{ daily_prompt }}</p>
+    {% endif %}
+
+    {% if quote %}
+        <h3>📖 Zarathustra Quote</h3>
+        <p>{{ quote }}</p>
+    {% endif %}
+</body>
+</html>
